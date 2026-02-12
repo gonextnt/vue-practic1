@@ -3,8 +3,7 @@
 <head>
     <link rel="stylesheet" href="css/main.css">
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script defer src="js/vue.min.js"></script>
     <script defer src="js/main.js"></script>
@@ -12,8 +11,14 @@
 </head>
 <body>
 <div id="app">
-    <product :premium="premium"></product>
-
+    <div class="cart">
+        <p>Cart({{ cart.length }})</p>
+    </div>
+    <product
+            :premium="premium"
+            @add-to-cart="updateCart"
+            @del-to-cart="delCart"
+    ></product>
 </div>
 </body>
 </html>
